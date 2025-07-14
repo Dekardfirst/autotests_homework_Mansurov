@@ -34,5 +34,5 @@ def test_zero_division():
         all_division(10, 0)
 
 @pytest.mark.acceptance
-def test_large_numbers():
+def test_positive_large_numbers():
     assert all_division(1000000, 1000) == 1000
