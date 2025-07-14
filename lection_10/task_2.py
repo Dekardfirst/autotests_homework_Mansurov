@@ -15,3 +15,24 @@ def all_division(*arg1):
     for i in arg1[1:]:
         division /= i
     return division
+
+@pytest.mark.smoke
+def test_positive_numbers():
+    assert all_division(100, 10) == 10
+
+@pytest.mark.acceptance
+def test_negative_numbers():
+    assert all_division(-100, -10) == 10
+
+@pytest.mark.smoke
+def test_mixed_numbers():
+    assert all_division(100, -10) == -10
+
+@pytest.mark.smoke
+def test_zero_division():
+    with pytest.raises(ZeroDivisionError):
+        all_division(10, 0)
+
+@pytest.mark.acceptance
+def test_large_numbers():
+    assert all_division(1000000, 1000) == 1000
