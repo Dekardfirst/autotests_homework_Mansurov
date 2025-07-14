@@ -14,6 +14,23 @@
 # iuy qnikkgxvxfxtxv
 
 import random
+import string
 
+def generate_random_name():
+    """
+    Генератор двух случайных слов из латинских букв
+    """
+    while True:
+        len_word1 = random.randint(1, 15)
+        len_word2 = random.randint(1, 15)
 
-# Здесь пишем код
+        word1 = ''.join(random.choice(string.ascii_lowercase) for _ in range(len_word1))
+        word2 = ''.join(random.choice(string.ascii_lowercase) for _ in range(len_word2))
+
+        yield f"{word1} {word2}"
+
+gen = generate_random_name()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
