@@ -4,3 +4,18 @@
 
 import pytest
 
+class TestMathOperations:
+
+    @pytest.mark.usefixtures("class_time")
+    def test_addition(self):
+        assert 2 + 2 == 4
+
+    def test_multiplication(self):
+        assert 3 * 5 == 15
+
+    @pytest.mark.usefixtures("test_time")
+    def test_type_check(self, test_time):
+        assert isinstance(10, int)
+
+    def test_division(self):
+        assert 100 / 10 == 10
