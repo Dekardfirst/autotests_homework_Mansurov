@@ -20,7 +20,7 @@ chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {
     "download.default_directory": download_dir,
     "download.prompt_for_download": False,
-    "download.directory_upograde": True,
+    "download.directory_upgrade": True,
     "safebrowsing.enabled": True
 })
 
